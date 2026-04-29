@@ -1,0 +1,68 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    font-size: 23px; /* Your desired font size */
+    background-color: #0ab75b; /* Light blue background */
+    color: #00cc58; /* Default text color */
+}
+
+/* Center the image horizontally */
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* optional, keeps image responsive */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    color: #00cc58; /* Blue title color */
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.intro img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.column {
+    width: 45%;
+    background-color: #ffffffcc; /* semi-transparent white */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.center-content {
+  text-align: center;
+}
+
+input {
+    padding: 10px 10px;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}

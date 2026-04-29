@@ -1,0 +1,152 @@
+/* Ported styles from original site for React app */
+:root{
+  --bg:#f4f7fb; --card:#ffffff; --accent:#0b63d6; --muted:#5a6b78; --pad:20px; --accent-2:#0b8bd6; --glass: rgba(174, 255, 192, 0.75);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#c5deff, #b1ffdf);color:#074b00;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.site-header{position:fixed;top:0;left:0;right:0;height:140px;display:flex;align-items:center;color:rgb(141, 255, 175);background-size:cover;background-position:center;border-bottom:1px solid rgba(255,255,255,0.06);z-index:1200}
+.site-header::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(3,37,65,0.6), rgba(3,37,65,0.25));backdrop-filter: blur(2px)}
+.site-header .container{position:relative;z-index:2;padding:20px}
+h1{margin:0 0 8px;font-size:2rem;letter-spacing:-0.4px}
+.lede{margin:0;color:rgba(255,255,255,0.95);font-weight:500}
+main{padding:28px;padding-top:180px}
+section{background:var(--card);border-radius:12px;padding:22px;margin:18px 0;box-shadow:0 6px 18px rgba(12,38,63,0.06)}
+section h2{margin-top:0}
+ul,ol{margin:8px 0 0 1.25rem}
+.footer{font-size:0.95rem;color:var(--muted);text-align:center;padding:12px}
+
+@media (max-width:600px){
+  .container{padding:16px}
+  h1{font-size:1.4rem}
+}
+
+/* focused input styles and accessibility tweaks */
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent-2);box-shadow:0 8px 20px rgba(11,139,214,0.12);transform:translateY(-2px)}
+label:focus-within{z-index:3}
+/* make sure focused inputs scroll into view below the fixed header */
+input,textarea,select{scroll-margin-top:160px}
+
+/* additional responsive header adjustments */
+@media (max-width:900px){
+  .site-header{height:110px}
+  main{padding-top:130px}
+}
+@media (max-width:600px){
+  .site-header{height:88px}
+  main{padding-top:110px}
+}
+
+/* Estimator styles */
+.estimator{background:var(--card);border-radius:10px;padding:18px;margin:14px 0;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.form-grid label{display:flex;flex-direction:column;font-size:0.95rem}
+.form-grid input,.form-grid select{margin-top:6px;padding:8px;border:1px solid #d7e2ef;border-radius:6px}
+.results{margin-top:12px;padding-top:12px;border-top:1px dashed #afd4ff}
+.muted{color:var(--muted);font-size:0.95rem}
+
+@media (max-width:700px){
+  .form-grid{grid-template-columns:1fr}
+}
+
+/* Navigation and CTA styles */
+.top-nav{display:flex;gap:12px;align-items:center}
+.top-nav a{color:var(--accent);text-decoration:none;padding:8px 10px;border-radius:6px}
+.top-nav a:hover{background:#eaf3ff}
+.button{display:inline-block;background:var(--accent);color:white;padding:10px 14px;border-radius:8px;text-decoration:none}
+.button:hover{opacity:0.95}
+.estimator-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+
+/* Comparator styles */
+.comparator-form{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.school-card{background:var(--card);padding:12px;border-radius:8px;border:1px solid #eef7ff}
+.school-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.school-card label{display:block;margin-bottom:8px;font-size:0.9rem}
+.school-card input{width:100%;padding:8px;border-radius:6px;border:1px solid #d7e2ef}
+.small{background:#eee;border:0;padding:6px 8px;border-radius:6px}
+.comparator-results{margin-top:20px}
+.comparator-table{width:100%;border-collapse:collapse}
+.comparator-table th,.comparator-table td{padding:10px;border-bottom:1px solid #eef6ff;text-align:left}
+.comparator-table tr.best{background:linear-gradient(90deg,#f0fbf6,#ffffff)}
+
+@media (max-width:900px){
+  .comparator-form{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .comparator-form{grid-template-columns:1fr}
+}
+
+/* Form styles */
+.demo-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.demo-form label{display:flex;flex-direction:column;font-size:0.95rem}
+.demo-form input[type="text"], .demo-form input[type="email"], .demo-form input[type="date"], .demo-form select, .demo-form textarea{padding:8px;border:1px solid #d7e2ef;border-radius:6px}
+.demo-form input[type="file"]{padding-top:8px}
+.demo-form .radio-row{display:flex;gap:12px;margin-top:6px}
+.demo-form .form-error{grid-column:1/-1;color:#b00020}
+.demo-form .button{grid-column:1/-1}
+.submission-card{background:var(--card);padding:12px;border-radius:8px;border:1px solid #eef7ff}
+.submission-card dl{display:grid;grid-template-columns:160px 1fr;gap:8px}
+
+@media (max-width:700px){
+  .demo-form{grid-template-columns:1fr}
+}
+
+/* Enhanced UI elements */
+.top-nav{display:flex;gap:12px;align-items:center}
+.top-nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.06)}
+.top-nav a:hover{background:rgba(255,255,255,0.12)}
+.button{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 14px;border-radius:10px;text-decoration:none;border:0;box-shadow:0 6px 18px rgba(10,78,160,0.12)}
+.button:hover{transform:translateY(-1px)}
+.top-nav a.active{background:rgba(255,255,255,0.18);box-shadow:0 6px 14px rgba(3,37,65,0.12);font-weight:600}
+
+/* logo / brand */
+.site-logo{height:84px;display:block}
+.brand h1{position:absolute !important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.brand .lede{margin:0;font-size:0.95rem}
+
+@media (max-width:700px){
+  .site-logo{height:56px}
+  .brand h1{position:absolute !important;left:-9999px}
+  .brand .lede{display:none}
+}
+
+/* when image fails, reveal the textual title for accessibility/fallback */
+.brand.no-logo h1{position:static !important;left:auto;width:auto;height:auto;overflow:visible;clip:auto}
+.brand.no-logo .lede{display:block}
+
+/* Campaign accent */
+.campaign-badge{display:inline-block;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:999px;font-weight:600;color:white;margin-left:8px}
+
+.share-row{display:flex;gap:8px;margin-top:10px}
+.share-row .button{background:#0b8bd6}
+
+/* section image */
+.section-image{width:100%;border-radius:10px;object-fit:cover;display:block;margin:12px 0}
+
+/* refine estimator/card visuals */
+.estimator{background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:12px;padding:18px;margin:14px 0;box-shadow:0 6px 18px rgba(12,38,63,0.04)}
+.results{margin-top:12px;padding-top:12px;border-top:1px dashed #dbefff}
+
+/* comparator tweaks */
+.school-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:14px;border-radius:10px;border:1px solid #eef7ff}
+.comparator-table th,.comparator-table td{padding:12px;border-bottom:1px solid #eef6ff;text-align:left}
+.comparator-table tr.best{background:linear-gradient(90deg,#f0fbf6,#ffffff)}
+
+/* form visuals */
+.demo-form input[type="text"], .demo-form input[type="email"], .demo-form input[type="date"], .demo-form select, .demo-form textarea{background:#fbfdff}
+.submission-card{background:linear-gradient(180deg,#ffffff,#fbfdff);padding:14px;border-radius:10px;border:1px solid #eef7ff}
+
+@media (max-width:900px){
+  .container{padding:18px}
+}
+
+.textInput{
+    padding: 10px 10px;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+}
+
+.textInput:focus {
+    border-radius: 5px;
+
+}

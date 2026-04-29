@@ -1,0 +1,21 @@
+/* Minimal responsive styling for the financial-aid explainer site */
+:root{
+  --bg:#f7f9fb; --card:#ffffff; --accent:#0b63d6; --muted:#5a6b78; --pad:20px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:#17202a;line-height:1.5}
+.container{max-width:900px;margin:0 auto;padding:24px}
+.site-header{background:linear-gradient(90deg,#ffffff88,#f0f6ff);border-bottom:1px solid #e6eef9}
+.site-header .container{padding:32px 24px}
+h1{margin:0 0 8px;font-size:1.8rem}
+.lede{margin:0;color:var(--muted)}
+main{padding:24px}
+section{background:var(--card);border-radius:10px;padding:18px;margin:14px 0;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
+section h2{margin-top:0}
+ul,ol{margin:8px 0 0 1.25rem}
+.footer{font-size:0.95rem;color:var(--muted);text-align:center;padding:12px}
+
+@media (max-width:600px){
+  .container{padding:16px}
+  h1{font-size:1.4rem}
+}
